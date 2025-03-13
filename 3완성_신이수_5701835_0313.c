@@ -22,7 +22,9 @@ int main(){
             str[i] = str[i] + gap;
         }else(str[i] = str[i]);
 
-    }
+    } // ASCII Code가 소문자 a <= str[i] <= z 일때, str[i] - gap를 통해 대문자로 변환
+      // ASCII Code가 대문자 A <= str[i] <= Z 일때, str[i] + gap를 통해 소문자로 변환
+      // 나머지 경우는 그대로 출력
 
 
     // 계산된 문자열 길이와 변환된 문자열을 출력
