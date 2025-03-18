@@ -8,10 +8,10 @@
 #include<stdio.h>
 
 
-void add(int a, int c);	// +기호를 입력 받으면 덧셈 실행
-void sub(int a, int c);	// -기호를 입력 받으면 뺄셈 실행
-void mul(int a, int c);	// *기호를 입력 받으면 곱셈 실행
-void div(int a, int c);	// /기호를 입력 받으면 나눗셈 실행
+void add(int a, int c); //덧셈 선언
+void sub(int a, int c); //뺄셈 선언
+void mul(int a, int c); //곱셈 선언
+void div(int a, int c); //나눗셈 선언
 
 //메인 코드
 int main(){
@@ -28,22 +28,32 @@ int main(){
 	//연산자 b의 종류에 따라 각 연산 실행
 	//사칙연산 외의 다른 연산자 사용 시 오류 문구 출력
 	switch(b){
+
+		// + 기호를 입력 받으면 덧셈 실행
 		case '+':{
 			add(a, c);
 			break;
 		}
+
+		// -기호를 입력 받으면 뺄셈 실행
 		case '-':{
 			sub(a, c);
 			break;
 		}
+
+		// *기호를 입력 받으면 곱셈 실행
 		case '*':{
 			mul(a, c);
 			break;
 		}
+
+		// /기호를 입력 받으면 나눗셈 실행
 		case '/':{
 			div(a, c);
 			break;
 		}
+
+		//연산자가 없거나 사칙연산기호가 아니면 오류문구 출력
 		default:
 		printf("잘못된 연산자입니다.\n");
 		}
