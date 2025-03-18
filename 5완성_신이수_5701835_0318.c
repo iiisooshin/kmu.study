@@ -7,7 +7,7 @@
 
 #include<stdio.h>
 
-
+//추상자료형
 void add(int a, int c); //덧셈 선언
 void sub(int a, int c); //뺄셈 선언
 void mul(int a, int c); //곱셈 선언
@@ -61,7 +61,12 @@ int main(){
 		return 0;
 
 
-	}
+	} //메인코드 종료
+
+
+
+	
+	//추상자료형
 
 	//a + c를 계산하여 출력
 	void add(int a, int c) {
