@@ -29,7 +29,7 @@ for i
 int main(){
 
     int n, i, j;
-    int a = 1;
+    int count = 1;
 
     printf("정수 n을 입력하세요 : ");
     scanf("%d", &n);
