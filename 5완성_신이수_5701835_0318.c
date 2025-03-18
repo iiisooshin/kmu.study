@@ -1,11 +1,11 @@
-#include<stdio.h>
-
 //입력받을 정수 int a, c 선언
 //입력받을 연산자 char b 선언
 //사칙연산을 수행할 식 a b c 입력
 //연산자 b 기호에 따라 add sub mul div 실행
 //계산된 결과 출력
 //추상자료형??
+
+#include<stdio.h>
 
 
 void add(int a, int c);	// +기호를 입력 받으면 덧셈 실행
