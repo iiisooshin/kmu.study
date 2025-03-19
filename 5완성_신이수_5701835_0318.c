@@ -4,6 +4,7 @@
 //연산자 b 기호에 따라 add sub mul div 실행
 //계산된 결과 출력
 //추상자료형??
+//연산자식 입력 -> 양의정수 2개 입력으로 코드 변경
 
 #include<stdio.h>
 
@@ -16,12 +17,15 @@ void div(float a, float b); //나눗셈 선언
 //메인 코드
 int main(){
 
+	//계산 받을 양의 정수 2개 입력받기
 	int a, b;
 	printf("첫 번째 양의 정수를 입력하세요 : ");
 	scanf("%d", &a);
 	printf("두 번째 양의 정수를 입력하세요 : ");
 	scanf("%d", &b);
 
+
+	//입력 받은 양의 정수 a, b를 활용해 각 사칙연산 계산하여 출력
 	printf("덧셈 : ");
 	add(a, b);
 	printf("뺄셈 : ");
@@ -33,7 +37,7 @@ int main(){
 
 	return 0;
 
-	//정수 a 연산자 b 정수 c를 받았을 때 연산
+	//정수 a 연산자 b 정수 c를 받았을 때 코드
 
     // int a, c; //입력 받을 정수
 	// char b;   //입력 받을 연산자(문자)
@@ -78,8 +82,6 @@ int main(){
 
 	//return 0;
 	
-		
-
 
 	} //메인코드 종료
 
@@ -88,22 +90,22 @@ int main(){
 	
 	//추상자료형
 
-	//a + c를 계산하여 출력
+	//a + b를 계산하여 출력
 	void add(int a, int b) {
 		printf("%d\n", a + b);
 	}
 	
-	//a - c를 계산하여 출력
+	//a - b를 계산하여 출력
 	void sub(int a, int b) {
 		printf("%d\n", a - b);
 	}
 	
-	//a * c를 계산하여 출력
+	//a * b를 계산하여 출력
 	void mul(int a, int b) {
 		printf("%d\n", a * b);
 	}
 	
-	//a / c를 계산하여 출력, 단 0으로 나눌 시 계산불가 문구 출력
+	//a / b를 계산하여 출력, 단 0으로 나눌 시 계산불가 문구 출력
 	void div(float a, float b) {
 		if (b != 0) {
 			printf("%.2f\n", a / b);
