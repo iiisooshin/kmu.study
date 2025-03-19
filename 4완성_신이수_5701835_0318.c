@@ -25,7 +25,25 @@ for i
 */
 
 
-//!!!!!추상자료형, 알고리즘 유사코드(psudo code)로 정리 필요!!!!!
+
+
+
+
+
+//의사코드
+/*
+scanf n
+for i <- 2 to n do
+    prime = 1
+    for j <- 2 to i-1 do
+        if i % j == 1
+            prime = 0
+            break;
+    if prime == 1
+        printf n;
+*/
+
+
 #include<stdio.h>
 
 
@@ -38,7 +56,7 @@ int main(){
     scanf("%d", &n); //정수 n 입력받기
     printf("%d 이하의 소수 ", n);
 
-
+    
     for(i=2; i <= n; i++){
         //소수를 판별하는 prime 선언 prime이 1일때, 소수
         int prime = 1;
