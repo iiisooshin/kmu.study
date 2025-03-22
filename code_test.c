@@ -1,3 +1,6 @@
+
+
+
 #include <stdio.h>
 
 // 사칙연산 함수 선언 (ADT 인터페이스)
@@ -23,10 +26,9 @@ int main() {
     // 두 정수 입력받아 개별 사칙연산 수행
     int a, b;
     printf("첫 번째 정수: ");
-    scanf("%d", &a);    // 첫 번째 정수 입력
+    scanf_s("%d", &a);    // 첫 번째 정수 입력
     printf("두 번째 정수: ");
-    scanf("%d", &b);    // 두 번째 정수 입력
-    getchar();          // scanf 후 남은 개행 문자 제거
+    scanf_s("%d", &b);    // 두 번째 정수 입력
 
     // 개별 사칙연산 결과 출력
     printf("덧셈: "); add(a, b);

@@ -58,8 +58,8 @@ int main(){
     int n, i, j; //입력받을 정수 n과 for문에 사용할 i, j 변수 선언
 
     printf("정수 n을 입력하세요 : ");
-    scanf("%d", &n); //정수 n 입력받기
-    printf("%d 이하의 소수 ", n);
+    scanf_s("%d", &n); //정수 n 입력받기
+    printf("%d 이하의 소수 : ", n);
 
     
     for(i=2; i <= n; i++){
