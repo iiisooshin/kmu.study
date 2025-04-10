@@ -87,8 +87,8 @@ int printList(listType* list) {
 	printf("List: size = %d, last = %d, move = %d\n\tItems:", list->size, list->last, list->move);
 	for (int i = 0; i <= list->last; i++) {
 		printf(" [%d]{%d,%d,%d} ", i, list->array[i].row, list->array[i].col, list->array[i].val);
+		printf("\n");
 	}
-	printf("\n");
 	return 0;
 }
 
