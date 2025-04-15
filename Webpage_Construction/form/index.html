@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Google</title>
+</head>
+<body>
+    <h1>My Page</h1>
+    <form action="thankyou.html" method="get">
+        <p>password
+            <input type="password" name="pass">
+        </p>
+
+        <p>search
+            <input type="search" name="q">
+        </p>
+
+        <p>email
+            <input type="email" name="email">
+        </p>
+
+        <p>mobile-phone *
+            <input type="tel" required name="tel" pattern="010-[0-9]{4}-[0-9]{4}" placeholder="010-****-****">
+        </p>
+
+        <p>URL
+            <input type="url" name="url">
+        </p>
+
+        
+        <p>How old are you?</p>
+        <ol>
+            <li><input type="radio" name="age" value="less-22">Less than 22</li>
+            <li><input type="radio" name="age" value="less-35">Less than 35</li>
+            <li><input type="radio" name="age" value="more-35">More than 35</li>
+        </ol>
+
+
+        <p>What type of music do you listen to?</p>
+        <ul>
+            <li><input type="checkbox" name="music" value="kpop">Kpop</li>
+            <li><input type="checkbox" name="music" value="rock">Rock</li>
+            <li><input type="checkbox" name="music" value="rap">Rap</li>
+        </ul>
+
+        <p>What is your favorite animal?</p>
+        <select name="animal" size="5" multiple>
+            <option>Cat</option>
+            <option>Dog</option>
+            <option>Koala</option>
+            <option>Dolphin</option>
+            <option>Chicken</option>
+        </select>
+        
+
+        <div>
+            <input type="submit" value="Send">
+            <input type="reset" value="Reset">
+        </div>
+
+    </form>
+</body>
+</html>
