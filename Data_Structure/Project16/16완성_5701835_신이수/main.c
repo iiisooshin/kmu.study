@@ -6,7 +6,6 @@ main() {
 
 
 
-
 	int input;
 	int repeat = 1;
 	elementType input_value;
