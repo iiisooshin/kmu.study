@@ -39,6 +39,9 @@ Node* pop(Stack* s) {
 
 Node* createNode(char data) {
     Node* newNode = (Node*)malloc(sizeof(Node));
+    if (!newNode) {
+        exit(1);
+    }
     newNode->data = data;
     newNode->left = NULL;
     newNode->right = NULL;
@@ -52,33 +55,94 @@ bool isBinaryTree(const char* str) {
     Node* current = NULL;
     bool isBinary = true;
     int i = 0;
+    int paren_count = 0; // 괄호 짝 확인용
 
     while (str[i] != '\0') {
+        if (str[i] == ' ' || str[i] == ',') {
+            i++; // 공백이나 쉼표 무시
+            continue;
+        }
         if (str[i] == '(') {
+            paren_count++;
             if (current != NULL) {
                 push(&s, current);
             }
-        } else if (str[i] == ')') {
+            current = NULL; // 새로운 서브트리 시작
+        }
+        else if (str[i] == ')') {
+            paren_count--;
+            if (paren_count < 0) {
+                printf("Error: Too many closing parentheses\n");
+                isBinary = false;
+                break;
+            }
             if (!isEmpty(&s)) {
                 current = pop(&s);
             }
-        } else if (str[i] >= 'A' && str[i] <= 'Z') {
+            else if (current != NULL) {
+                current = NULL; // 루트 수준으로 돌아감
+            }
+        }
+        else if (str[i] >= 'A' && str[i] <= 'Z') {
             Node* newNode = createNode(str[i]);
             if (root == NULL) {
                 root = newNode;
                 current = root;
-            } else if (current->left == NULL) {
-                current->left = newNode;
-                current = newNode;
-            } else if (current->right == NULL) {
-                current->right = newNode;
-                current = newNode;
-            } else {
-                isBinary = false; // 자식 노드가 2개를 초과
-                break;
+            }
+            else if (current == NULL) {
+                if (!isEmpty(&s)) {
+                    current = pop(&s);
+                    if (current->left == NULL) {
+                        current->left = newNode;
+                    }
+                    else if (current->right == NULL) {
+                        current->right = newNode;
+                    }
+                    else {
+                        printf("Error: Node %c has more than two children\n", current->data);
+                        isBinary = false;
+                        free(newNode);
+                        break;
+                    }
+                    current = newNode; // 새 노드를 현재 노드로 설정
+                }
+                else {
+                    printf("Error: Invalid tree structure\n");
+                    isBinary = false;
+                    free(newNode);
+                    break;
+                }
+            }
+            else {
+                if (current->left == NULL) {
+                    current->left = newNode;
+                }
+                else if (current->right == NULL) {
+                    current->right = newNode;
+                }
+                else {
+                    printf("Error: Node %c has more than two children\n", current->data);
+                    isBinary = false;
+                    free(newNode);
+                    break;
+                }
+                current = newNode; // 새 노드를 현재 노드로 업데이트
             }
         }
+        else {
+            printf("Error: Invalid character '%c'\n", str[i]);
+            isBinary = false;
+            break;
+        }
         i++;
+    }
+
+    if (paren_count != 0) {
+        printf("Error: Unclosed parentheses\n");
+        isBinary = false;
+    }
+    else if (paren_count == 0 && !isBinary) {
+        // 괄호는 맞지만 이진 트리 조건을 위반한 경우, 메시지 유지
     }
 
     // 메모리 해제
@@ -94,8 +158,7 @@ bool isBinaryTree(const char* str) {
         }
     }
     while (!isEmpty(&s)) {
-        Node* node = pop(&s);
-        free(node);
+        free(pop(&s));
     }
 
     return isBinary;
@@ -103,15 +166,16 @@ bool isBinaryTree(const char* str) {
 
 int main() {
     char input[MAX_SIZE];
-    // printf("트리 문자열을 입력하세요 (예: (A (B (C D) E (F (G))))): ");
+    printf("Enter a parenthesized binary tree (ex (A(B(C)(D))(E(F)(G))) ): ");
     fgets(input, MAX_SIZE, stdin);
-    
+
     // 개행 문자 제거
     input[strcspn(input, "\n")] = 0;
 
     if (isBinaryTree(input)) {
         printf("TRUE\n");
-    } else {
+    }
+    else {
         printf("FALSE\n");
     }
 
