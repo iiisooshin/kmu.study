@@ -1,20 +1,27 @@
 import cv2 as cv
 
-# img = cv.imread('Photos/cat.jpeg')
 
-# cv.imshow('Cat', img)
+# image read
+img = cv.imread('Photos/cat.jpeg')
 
-# cv.waitKey(0)
+cv.imshow('Cat', img)
 
 
-capture = cv.VideoCapture('Videos/cat.mp4')
+cv.waitKey(0)
 
-while True:
-    isTrue, frame = capture.read()
-    cv.imshow('Video', frame)
 
-    if cv.waitKey(20) & 0xFF==ord('d'):
-        break
 
-capture.release()
-cv.destroyAllWindows()
+
+# video read
+
+# capture = cv.VideoCapture('Videos/cat.mp4')
+
+# while True:
+#     isTrue, frame = capture.read()
+#     cv.imshow('Video', frame)
+
+#     if cv.waitKey(20) & 0xFF==ord('d'):
+#         break
+
+# capture.release()
+# cv.destroyAllWindows()
