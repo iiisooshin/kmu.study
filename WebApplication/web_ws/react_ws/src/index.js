@@ -6,7 +6,11 @@ import './index.css';
 // import Library from './ch03/library';
 // import Clock from './ch04/clock';
 // import Header from './ch04/header';
-import Product from './ch04/product';
+// import Product from './ch04/product';
+// import Event from './ch05/event';
+// import Counter from './ch05/counter';
+import Counter2 from './ch05/counter2';
+
 
 // const element = <h1>Hello World!</h1>
 
@@ -100,17 +104,22 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
     //   <ButtonSignup />
     //   <ButtonContact />
     // </div>
-    <div>
-      {/* <Header name='신이수' age={25}></Header>
-      <Header {...HeaderProps}></Header>
-      <Clock location='대구광역시'></Clock>
-      <Clock location='부산광역시'></Clock>
-      <Clock location='서울특별시'></Clock> */}
-      <Product name='사과' price={1000}></Product>
-      <Product name='바나나' price={2000}></Product>
-      <Product name='딸기' price={3000}></Product>
-    </div>
+    // <div>
+    //   {/* <Header name='신이수' age={25}></Header>
+    //   <Header {...HeaderProps}></Header>
+    //   <Clock location='대구광역시'></Clock>
+    //   <Clock location='부산광역시'></Clock>
+    //   <Clock location='서울특별시'></Clock> */}
+    //   <Product name='사과' price={1000}></Product>
+    //   <Product name='바나나' price={2000}></Product>
+    //   <Product name='딸기' price={3000}></Product>
+    // </div>
 
+
+      // <Event></Event>
+
+      // <Counter></Counter>
+      <Counter2></Counter2>
 
   );
 
