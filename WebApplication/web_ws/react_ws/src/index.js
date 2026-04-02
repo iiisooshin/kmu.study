@@ -9,7 +9,12 @@ import './index.css';
 // import Product from './ch04/product';
 // import Event from './ch05/event';
 // import Counter from './ch05/counter';
-import Counter2 from './ch05/counter2';
+// import Counter2 from './ch05/counter2';
+// import InputText from './ch05/inputText';
+// import InputReset from './ch05/inputReset';
+// import NumberOnly from './ch05/numberOnly';
+import CountUseref from './ch05/CountUseref';
+
 
 
 // const element = <h1>Hello World!</h1>
@@ -119,8 +124,14 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
       // <Event></Event>
 
       // <Counter></Counter>
-      <Counter2></Counter2>
+      // <Counter2></Counter2>
 
+      // <InputText></InputText>
+      // <InputReset></InputReset>
+      // <NumberOnly></NumberOnly>
+
+      <CountUseref></CountUseref>
+    
   );
 
 // }, 1000);
