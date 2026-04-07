@@ -10,7 +10,7 @@ export default function CountUseref() {
     return(
         // state : 값이 변할 때 마다 리랜더링
         // var : 값이 변해도 초기화
-        // ref : 값은 변하지만 리랜더링 x
+        // ref : 값은 변하지만 바로 리랜더링 x
         <div>
             <p>State : {state}</p>
             <button onClick={() => setState(state + 1)}>State Up</button>

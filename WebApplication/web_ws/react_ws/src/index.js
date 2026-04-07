@@ -13,7 +13,9 @@ import './index.css';
 // import InputText from './ch05/inputText';
 // import InputReset from './ch05/inputReset';
 // import NumberOnly from './ch05/numberOnly';
-import CountUseref from './ch05/CountUseref';
+// import CountUseref from './ch05/CountUseref';
+import SearchUseref from './ch05/SearchUseref';
+
 
 
 
@@ -130,7 +132,8 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
       // <InputReset></InputReset>
       // <NumberOnly></NumberOnly>
 
-      <CountUseref></CountUseref>
+      // <CountUseref></CountUseref>
+      <SearchUseref></SearchUseref>
     
   );
 
