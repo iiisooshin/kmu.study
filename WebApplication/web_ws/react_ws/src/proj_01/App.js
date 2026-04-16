@@ -3,11 +3,14 @@ import Viewer from "./Viewer";
 import Controller from "./Controller";
 import './App.css'
 import Even from "./Even";
+import Timer from "./Timer";
 
-function App() {
+export default function App() {
 
     const [count, setCount] = useState(0);
     const [text, setText] = useState("");
+    const [start, setStart] = useState(false);
+    
 
     function handleSetCount(value) {
         setCount(count + value);
@@ -16,6 +19,10 @@ function App() {
     function handleSetText(e) {
         setText(e.target.value);
     }
+
+    function buttonOnClick() {
+            setStart(!start);
+        }
 
     // useEffect(() => {
     //     console.log("count 업데이트!")
@@ -64,8 +71,11 @@ function App() {
             <div>
                 <Controller handleSetCount={handleSetCount}></Controller>
             </div>
+            <div>
+                <h2>Timer</h2>
+                {start &&<Timer />}
+                <button onClick={buttonOnClick}>Timer</button>
+            </div>
         </div>
     );
 }
-
-export default App;
