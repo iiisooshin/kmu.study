@@ -31,7 +31,7 @@ export default function App() {
     };
     
 
-    const handeKeyDown = (e) => {
+    const handleKeyDown = (e) => {
         if (e.key === "Enter") handleOnAdd();
     }
 
@@ -44,7 +44,7 @@ export default function App() {
 
             <div>
                 <h3>ToDo</h3>
-                <input value={text} ref={refInput} type="text" onChange={handleOnChange} onKeyDown={handeKeyDown} placeholder="input todos"/>
+                <input value={text} ref={refInput} type="text" onChange={handleOnChange} onKeyDown={handleKeyDown} placeholder="input todos"/>
                 <button onClick={handleOnAdd}>Add</button>
             </div>
 

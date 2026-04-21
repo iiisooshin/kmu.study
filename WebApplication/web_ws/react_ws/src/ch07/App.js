@@ -1,39 +1,47 @@
-import React, {useState} from "react";
-import Timer from "./Timer";
+import React, {useEffect, useState, useRef} from "react";
+
+// 수정 필요
 
 export default function App() {
 
-    const [start, setStart] = useState(false);
-    const [interval, setInterval] = useState(false);
+    const [count, setCount] = useState(0);
+    const [isRunning, setIsRunning] = useState(false);
+
+    const intervalRef = useRef(null);
+    const prevCountRef = useRef(0);
 
 
-    function buttonOnStart() {
-        setStart(true);
-    }
-    
-    function buttonOnReset() {
-        setStart(false);
-    }
-    
-    function buttonOnPause() {
-        setInterval(true);
-    }
-    
-    function Interval() {
-        <div>
-            <p>{}</p>
-        </div>
+    useEffect(() => {
+        if (isRunning) {
+            intervalRef.current = setInterval(() => {setCount((prev) => prev + 1);}, 1000);
+        } else {
+            clearInterval(intervalRef.current);
+        }
+
+        return () => clearInterval(intervalRef.current);
+    }, [isRunning]);
+
+
+
+    useEffect(() => {
+        console.log("현재 값 : ", count);
+        prevCountRef.current = count;
+    }, [count]);
+
+    const handleReset = () => {
+        setIsRunning(false);
+        setCount(0);
     }
     
     
     return(
         <div>
             <h2>Timer</h2>
-            {start && <Timer />}
-            <button onClick={buttonOnStart}>Start</button>
-            <button onClick={buttonOnPause}>Pause</button>
-            <button onClick={buttonOnReset}>Reset</button>
-            {interval && <Interval />}
+            <p>현재 : {count}</p>
+            <p>이전 : {prevCountRef.current}</p>
+            <button onClick={() => setIsRunning(true)}>Start</button>
+            <button onClick={() => setIsRunning(false)}>Pause</button>
+            <button onClick={handleReset}>Reset</button>
         </div>
     );
 }
