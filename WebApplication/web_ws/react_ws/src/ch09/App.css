@@ -1,5 +1,6 @@
 body {
     margin: 0px;
+    background-color: skyblue;
 }
 
 
@@ -9,7 +10,9 @@ body {
     margin: 20px auto;
     box-sizing: border-box;
     padding: 20px;
-    border: 1px solid gray;
+    border: none;
+    border-radius: 15px;
+    background-color: white;
 
 
     display: flex;
@@ -19,7 +22,7 @@ body {
 
 .Header h1{
     margin-bottom: 0px;
-    color: coral;
+    color: skyblue;
 }
 
 .TodoEditor .editor_wrapper {
@@ -39,14 +42,14 @@ body {
 
 .TodoEditor input:focus {
     outline: none;
-    border: 1px solid coral;
+    border: 1px solid skyblue;
 }
 
 .TodoEditor button {
     cursor: pointer;
     width: 80px;
     border: none;
-    background-color: coral;
+    background-color: skyblue;
     color: white;
     border-radius: 5px;
     font-size: 15px;
@@ -59,6 +62,7 @@ body {
     gap: 20px;
     padding-bottom: 20px;
     border-bottom: 1px solid lightgray;
+    margin-bottom: 10px;
 }
 
 .TodoItem .checkbox_col {
@@ -96,5 +100,5 @@ body {
 
 .TodoList .searchbar:focus {
     outline: none;
-    border-bottom: 1px solid coral;
+    border-bottom: 1px solid skyblue;
 }
