@@ -14,9 +14,9 @@ export default function App() {
 
     function onCreate(content) {
         const newItem = {
-            id: idRef.Current,
+            id: idRef.current,
             isDone: false,
-            content,
+            content: content,
             createdDate: new Date().getTime(),
         };
 
@@ -25,12 +25,26 @@ export default function App() {
     }
 
 
+    function onUpdate(targetId) {
+        setTodo(todo.map((item) => 
+            item.id === targetId
+            ? {...item, isDone : !item.isDone}
+            : item)
+        )
+    }
+
+
+    function onDelete(targetId) {
+        setTodo(todo.filter((item) => item.id !== targetId));
+    }
+
+
 
     return(
         <div className="App">
             <Header></Header>
             <TodoEditor onCreate={onCreate}></TodoEditor>
-            <TodoList todo={todo}></TodoList>
+            <TodoList todo={todo} onUpdate={onUpdate} onDelete={onDelete}></TodoList>
         </div>
     );
 }

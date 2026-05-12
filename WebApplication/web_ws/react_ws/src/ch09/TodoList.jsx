@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import TodoItem from "./TodoItem";
 
 
-export default function TodoList({todo}) {
+export default function TodoList({todo, onUpdate, onDelete}) {
 
     const [search, setSearch] = useState("");
 
@@ -27,7 +27,7 @@ export default function TodoList({todo}) {
                 type="text"
                 placeholder="검색어를 입력하세요"/>
             <div>
-                {getSearchResult().map((item)=>(<TodoItem key={item.id} {...item}/>))}
+                {getSearchResult().map((item)=>(<TodoItem key={item.id} {...item} onUpdate={onUpdate} onDelete={onDelete}/>))}
             </div>
         </div>
     );
