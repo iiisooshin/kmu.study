@@ -19,8 +19,10 @@ import ReactDOM from 'react-dom/client';
 // import App from './ch07/App';
 // import App from './proj_02/App';
 // import App from './problem_01/App'
-import App from './ch09/App'
-import './ch09/App.css'
+// import App from './ch09/App'
+// import './ch09/App.css'
+import App from './ch12/App_page'
+import { BrowserRouter } from "react-router-dom"
 
 
 
@@ -140,7 +142,9 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
       // <CountUseref></CountUseref>
       // <SearchUseref></SearchUseref>
 
-      <App></App>
+      <BrowserRouter>
+        <App></App>
+      </BrowserRouter>
     
   );
 

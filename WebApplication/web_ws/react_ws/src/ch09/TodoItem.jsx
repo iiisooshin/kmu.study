@@ -1,4 +1,5 @@
-
+import React from "react";
+import { Link } from "react-router-dom";
 
 export default function TodoItem({id, isDone, content, createdDate, onUpdate, onDelete}) {
 
@@ -18,7 +19,7 @@ export default function TodoItem({id, isDone, content, createdDate, onUpdate, on
                 type="checkbox"
                 onChange={onChangeCheckbox}
             />
-            <div className="title_col">{content}</div>
+            <Link className="title_col" to={`/todo/${id}`}>{content}</Link>
             <div className="date_col">{new Date(createdDate).toLocaleDateString()}</div>
             <button className="btn_col" onClick={onClickDelete}>삭제</button>
         </div>
