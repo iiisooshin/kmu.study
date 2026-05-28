@@ -1,0 +1,23 @@
+{
+  "todos": [
+    {
+      "isDone": false,
+      "content": "밥 먹기 ",
+      "createdDate": 1779937069810,
+      "id": "xxQ-JSSQJts"
+    },
+    {
+      "isDone": false,
+      "content": "휴식하기",
+      "createdDate": 1779937178652,
+      "id": "V-ri8S-qtQE"
+    },
+    {
+      "isDone": false,
+      "content": "축제 가기",
+      "createdDate": 1779937187521,
+      "id": "JYOjefN1Qmc"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}

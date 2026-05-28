@@ -12,6 +12,9 @@ export default function TodoEditor({onCreate}) {
     };
 
     const handleKeyDown = (e) => {
+        // 한글 입력 조합 중 Enter는 글자 확정용이므로 Todo 추가를 실행하지 않는다.
+        if (e.nativeEvent.isComposing) return;
+
         if (e.key === "Enter") onSubmit();
     }
 
