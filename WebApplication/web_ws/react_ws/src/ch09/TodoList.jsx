@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import TodoItem from "./TodoItem";
 
 
-export default function TodoList({todo, onUpdate, onDelete}) {
+export default function TodoList({todo, onUpdate, onDelete, onClearAll, onDeleteDone}) {
 
     const [search, setSearch] = useState("");
 
@@ -20,6 +20,10 @@ export default function TodoList({todo, onUpdate, onDelete}) {
     return(
         <div className="TodoList">
             <h3>Todo List</h3>
+            <div className="todo_controls">
+                <button onClick={onClearAll}>전체 삭제</button>
+                <button onClick={onDeleteDone}>완료된 Todo 삭제</button>
+            </div>
             <input
                 className="searchbar"
                 value={search}

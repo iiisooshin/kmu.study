@@ -111,10 +111,33 @@ export default function App() {
         };
 
 
+
+    const onClearAll = () => {
+        if (window.confirm("정말로 모든 Todo를 삭제하시겠습니까?")) {
+            setTodo([]);
+        }
+    };
+
+
+    const onDeleteDone = () => {
+        const doneCount = todo.filter((item) => item.isDone).length;
+
+        if (doneCount === 0) {
+            alert("완료된 Todo가 없습니다.");
+            return;
+        }
+
+        if (window.confirm("완료된 Todo를 모두 삭제하시겠습니까?")) {
+            setTodo(todo.filter((item) => !item.isDone));
+        }
+    };
+
+    
+
     return(
         <div className="App">
             <Routes>
-                <Route path='/' element={<Home onCreate={onCreate} onDelete={onDelete} onUpdate={onUpdate} todo={todo}></Home>}></Route>
+                <Route path='/' element={<Home onCreate={onCreate} onDelete={onDelete} onUpdate={onUpdate} todo={todo} onClearAll={onClearAll} onDeleteDone={onDeleteDone}></Home>}></Route>
                 <Route path='/todo/:id' element={<Todo todo={todo}></Todo>}></Route>
             </Routes>
 
