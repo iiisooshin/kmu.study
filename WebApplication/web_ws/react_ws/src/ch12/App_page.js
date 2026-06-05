@@ -112,22 +112,24 @@ export default function App() {
 
 
 
-    const onClearAll = () => {
+    const onClearAll = async () => {
         if (window.confirm("정말로 모든 Todo를 삭제하시겠습니까?")) {
+            await Promise.all(todo.map((item) => axios.delete(`${API_URL}/${item.id}`)));
             setTodo([]);
         }
     };
 
 
-    const onDeleteDone = () => {
-        const doneCount = todo.filter((item) => item.isDone).length;
+    const onDeleteDone = async () => {
+        const doneTodos = todo.filter((item) => item.isDone);
 
-        if (doneCount === 0) {
+        if (doneTodos.length === 0) {
             alert("완료된 Todo가 없습니다.");
             return;
         }
 
         if (window.confirm("완료된 Todo를 모두 삭제하시겠습니까?")) {
+            await Promise.all(doneTodos.map((item) => axios.delete(`${API_URL}/${item.id}`)));
             setTodo(todo.filter((item) => !item.isDone));
         }
     };
